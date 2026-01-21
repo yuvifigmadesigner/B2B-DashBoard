@@ -11,21 +11,6 @@ import {
 // --- Desktop Frame Component ---
 const DesktopFrame = ({ children }: { children?: React.ReactNode }) => (
     <div className="relative w-full aspect-[16/10] md:aspect-[16/9] bg-background rounded-xl md:rounded-2xl border border-line shadow-2xl overflow-hidden flex flex-col transition-all duration-500">
-        {/* Window Chrome */}
-        <div className="h-8 md:h-10 bg-surface border-b border-line flex items-center px-4 gap-2 flex-shrink-0">
-            <div className="flex gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/20 border border-red-500/30"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/30"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/30"></div>
-            </div>
-            {/* Address Bar Simulation */}
-            <div className="hidden md:flex flex-1 max-w-lg mx-auto bg-black/20 rounded-md h-6 items-center justify-center border border-white/5">
-                <div className="flex items-center gap-2 opacity-30">
-                    <div className="w-3 h-3 bg-zinc-500 rounded-full"></div>
-                    <div className="h-1.5 w-24 bg-zinc-600 rounded-full"></div>
-                </div>
-            </div>
-        </div>
         {/* Content Area */}
         <div className="flex-1 relative overflow-hidden bg-background">
             {children}
@@ -391,7 +376,7 @@ export const SectionSolutions = () => {
                             <img
                                 src={activeTab === 'fidelity' ? slides[currentSlide].image : slides[currentSlide].wireframe}
                                 alt={slides[currentSlide].title}
-                                className="w-full h-full object-cover object-top"
+                                className="w-full h-full object-fill"
                             />
                         </div>
                     </DesktopFrame>
